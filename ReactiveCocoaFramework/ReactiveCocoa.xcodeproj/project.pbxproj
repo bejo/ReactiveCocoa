@@ -1947,6 +1947,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = RAC;
+				LastTestingUpgradeCheck = 0610;
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "GitHub, Inc.";
 			};
