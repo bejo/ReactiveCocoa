@@ -511,7 +511,7 @@
 		D0D910D115F915BD00AD2DDA /* RACSignal+Operations.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D910CD15F915BD00AD2DDA /* RACSignal+Operations.m */; };
 		D0DFBCCE15DD6D40009DADB3 /* RACBacktrace.m in Sources */ = {isa = PBXBuildFile; fileRef = D0DFBCCD15DD6D40009DADB3 /* RACBacktrace.m */; };
 		D0DFBCCF15DD6D40009DADB3 /* RACBacktrace.m in Sources */ = {isa = PBXBuildFile; fileRef = D0DFBCCD15DD6D40009DADB3 /* RACBacktrace.m */; };
-		D0DFBCD015DD70CC009DADB3 /* ReactiveCocoa.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 88037F8315056328001A5B19 /* ReactiveCocoa.framework */; };
+		D0DFBCD015DD70CC009DADB3 /* ReactiveCocoa.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 88037F8315056328001A5B19 /* ReactiveCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		D0E9676B1641EF9C00FCFF06 /* NSArray+RACSequenceAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = D0E967571641EF9C00FCFF06 /* NSArray+RACSequenceAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D0E9676D1641EF9C00FCFF06 /* NSArray+RACSequenceAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E967581641EF9C00FCFF06 /* NSArray+RACSequenceAdditions.m */; };
 		D0E9676E1641EF9C00FCFF06 /* NSArray+RACSequenceAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E967581641EF9C00FCFF06 /* NSArray+RACSequenceAdditions.m */; };
@@ -1270,7 +1270,6 @@
 				88C5A02816924BFC0045EF05 /* RACMulticastConnectionSpec.m */,
 				D0EDE76516968AB10072A780 /* RACPropertySignalExamples.h */,
 				D0EDE76616968AB10072A780 /* RACPropertySignalExamples.m */,
-				8803C010166732BA00C36839 /* RACSchedulerSpec.m */,
 				D0C70F8F164337A2007027B4 /* RACSequenceAdditionsSpec.m */,
 				D0C70F91164337E3007027B4 /* RACSequenceExamples.h */,
 				D0C70F92164337E3007027B4 /* RACSequenceExamples.m */,
@@ -1850,7 +1849,7 @@
 			name = "ReactiveCocoa-iOS-UIKitTestHostTests";
 			productName = "ReactiveCocoa-iOS-UIKitTestHostTests";
 			productReference = 1860F430177C91B500C7B3C9 /* ReactiveCocoa-iOS-UIKitTestHostTests.octest */;
-			productType = "com.apple.product-type.bundle";
+			productType = "com.apple.product-type.bundle.ocunit-test";
 		};
 		5FAF5222174D4C2000CAC810 /* ReactiveCocoaTests-iOS */ = {
 			isa = PBXNativeTarget;
@@ -1868,7 +1867,7 @@
 			name = "ReactiveCocoaTests-iOS";
 			productName = "ReactiveCocoaTests-iOS";
 			productReference = 5FAF5223174D4C2000CAC810 /* ReactiveCocoaTests-iOS.octest */;
-			productType = "com.apple.product-type.bundle";
+			productType = "com.apple.product-type.bundle.ocunit-test";
 		};
 		88037F8215056328001A5B19 /* ReactiveCocoa */ = {
 			isa = PBXNativeTarget;
@@ -1905,7 +1904,7 @@
 			name = ReactiveCocoaTests;
 			productName = GHObservableTests;
 			productReference = 88CDF7DC15000FCF00163A9F /* ReactiveCocoaTests.octest */;
-			productType = "com.apple.product-type.bundle";
+			productType = "com.apple.product-type.bundle.ocunit-test";
 		};
 		88F440AA153DAC820097B4C3 /* ReactiveCocoa-iOS */ = {
 			isa = PBXNativeTarget;
@@ -1948,7 +1947,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = RAC;
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "GitHub, Inc.";
 			};
 			buildConfigurationList = 88CDF7B515000FCE00163A9F /* Build configuration list for PBXProject "ReactiveCocoa" */;
@@ -2787,6 +2786,8 @@
 			baseConfigurationReference = D094E45817775B1000906BF7 /* Test.xcconfig */;
 			buildSettings = {
 				CLANG_WARN_IMPLICIT_SIGN_CONVERSION = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_OPTIMIZATION_LEVEL = fast;
 				GCC_WARN_ABOUT_MISSING_NEWLINE = YES;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -2849,10 +2850,13 @@
 			baseConfigurationReference = D094E45517775B1000906BF7 /* Debug.xcconfig */;
 			buildSettings = {
 				CLANG_WARN_IMPLICIT_SIGN_CONVERSION = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_WARN_ABOUT_MISSING_NEWLINE = YES;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = x86_64;
@@ -2868,6 +2872,8 @@
 			baseConfigurationReference = D094E45717775B1000906BF7 /* Release.xcconfig */;
 			buildSettings = {
 				CLANG_WARN_IMPLICIT_SIGN_CONVERSION = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_WARN_ABOUT_MISSING_NEWLINE = YES;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
@@ -2991,6 +2997,8 @@
 			baseConfigurationReference = D094E45617775B1000906BF7 /* Profile.xcconfig */;
 			buildSettings = {
 				CLANG_WARN_IMPLICIT_SIGN_CONVERSION = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_WARN_ABOUT_MISSING_NEWLINE = YES;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
